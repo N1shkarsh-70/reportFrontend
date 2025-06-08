@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import Project from "../../../../server/model/projectModel";
 
 // Async thunk to add an issue
 export const addIssue = createAsyncThunk("plaza/addIssue", async (payload, { rejectWithValue, getState }) => {
