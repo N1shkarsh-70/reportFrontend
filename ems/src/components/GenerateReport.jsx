@@ -17,7 +17,7 @@ const GenerateReport = () => {
   const [endDate, setEndDate] = useState(null);
 const token = localStorage.getItem('token')
   const dispatch = useDispatch();
-const apiUrl= "http://192.168.29.124:3000/superadmin/report/pdf"
+const apiUrl= "https://backendreport.onrender.com/superadmin/report/pdf"
   // Fetch data from Redux
   const { engineers, status, error } = useSelector((state) => state.siteEngineer)
   const plazas = useSelector((state) => state.plaza.plazas || []);

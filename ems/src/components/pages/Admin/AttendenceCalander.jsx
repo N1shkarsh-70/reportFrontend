@@ -14,7 +14,7 @@ import UserSelector from '../../UserSelector';
 
 const AdminAttendanceManagement = () => {
   const token = localStorage.getItem('token')
-  const apiUrl = "http://192.168.29.124:3000/api/attendence/generate-attendance"
+  const apiUrl = "https://backendreport.onrender.com/api/attendence/generate-attendance"
   const dispatch = useDispatch();
   const { allAttendance, loading, error, success } = useSelector((state) => state.attendance);
   const { users } = useSelector((state) => state.users);

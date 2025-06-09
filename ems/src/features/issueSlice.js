@@ -5,7 +5,7 @@ import axios from "axios";
 export const addIssue = createAsyncThunk("plaza/addIssue", async (payload, { rejectWithValue, getState }) => {
   try {
     const token = getState().auth.token;
-    const response = await axios.post("http://192.168.29.124:3000/superadmin/add-issue", payload, {
+    const response = await axios.post("https://backendreport.onrender.com/superadmin/add-issue", payload, {
       headers: { Authorization: `Bearer ${token}` },
     });
     return response.data;
@@ -20,7 +20,7 @@ export const addIssue = createAsyncThunk("plaza/addIssue", async (payload, { rej
 export const getAllPendingIssues = createAsyncThunk("plaza/getAllPendingIssues", async (_, { rejectWithValue, getState }) => {
   try {
     const token = getState().auth.token;
-    const response = await axios.get("http://192.168.29.124:3000/superadmin/get-allPendingIssues", {
+    const response = await axios.get("https://backendreport.onrender.com/superadmin/get-allPendingIssues", {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log("API Response:", response.data);
@@ -35,7 +35,7 @@ export const getAllPendingIssues = createAsyncThunk("plaza/getAllPendingIssues",
 export const getIssuesByPlazaId = createAsyncThunk("plaza/getIssuesByPlazaId", async (_, { rejectWithValue, getState }) => {
   try {
     const token = getState().auth.token;
-    const response = await axios.get("http://192.168.29.124:3000/superadmin/get-issuesByPlazaId", {
+    const response = await axios.get("https://backendreport.onrender.com/superadmin/get-issuesByPlazaId", {
       headers: { Authorization: `http://192.168.29.124Bearer ${token}` },
     });
     console.log("API Response:", response.data);
@@ -51,7 +51,7 @@ export const getIssuesByPlazaId = createAsyncThunk("plaza/getIssuesByPlazaId", a
 export const getAllIssues = createAsyncThunk("plaza/getAllIssues", async (_, { rejectWithValue, getState }) => {
   try {
     const token = getState().auth.token;
-    const response = await axios.get("http://192.168.29.124:3000/superadmin/get-allIssues", {
+    const response = await axios.get("https://backendreport.onrender.com/superadmin/get-allIssues", {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log("API Response:", response.data);
@@ -68,7 +68,7 @@ export const resolveIssue = createAsyncThunk(
   async ({ issueId, remarks }, { rejectWithValue, getState }) => {
     try {
       const token = getState().auth.token;
-      const response = await axios.post("http://192.168.29.124:3000/superadmin/resolve-issue", {
+      const response = await axios.post("https://backendreport.onrender.com/superadmin/resolve-issue", {
         issueId,
         remarks,
       }, {
@@ -93,7 +93,7 @@ export const getPendingIssuesById = createAsyncThunk(
 
     try {
       const token = getState().auth.token;
-      const response = await axios.get("http://192.168.29.124:3000/superadmin/get-allPendingIssuesById", {
+      const response = await axios.get("https://backendreport.onrender.com/superadmin/get-allPendingIssuesById", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(response);
@@ -113,7 +113,7 @@ export const getIssuesByProjectId = createAsyncThunk("issues/getIssuesByProjectI
 
     try {
       const token = getState().auth.token;
-      const response = await axios.get(`http://192.168.29.124:3000/superadmin/get-projectIssues/${projectId}`, {
+      const response = await axios.get(`https://backendreport.onrender.com/superadmin/get-projectIssues/${projectId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(response);
